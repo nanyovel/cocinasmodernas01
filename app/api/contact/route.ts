@@ -14,7 +14,7 @@ export async function POST(req: Request) {
 
     await resend.emails.send({
       from: "Cocinas modernas <onboarding@resend.dev>",
-      to: ["jperezjimenez06@gmail.com"], // 👈 cámbialo por tu email real
+      to: ["jperez@noarix.com"], // 👈 cámbialo por tu email real
       subject: "Nuevo lead de Cocinas Modernas",
       html: `
         <h2>Nuevo mensaje de cocinasmodernasrd.com</h2>
