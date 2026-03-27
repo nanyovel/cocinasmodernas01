@@ -70,7 +70,7 @@ export default function Navbar() {
         {/* ── Logo ── */}
         <div className="flex gap-2">
           <img
-            src="logo transparent.png"
+            src="/images/logo transparent.png"
             alt="Cocinas Modernas RD"
             className="h-10 w-auto"
             width={100}

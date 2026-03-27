@@ -1,9 +1,9 @@
-'use client'
+"use client";
 
-const WHATSAPP_NUMBER = '18091234567' // ← Cambia este número
+const WHATSAPP_NUMBER = "18493419890"; // ← Cambia este número
 const WHATSAPP_MESSAGE = encodeURIComponent(
-  'Hola, me interesa obtener información sobre cocinas modernas. ¿Pueden ayudarme?'
-)
+  "Hola, me interesa obtener información sobre cocinas modernas. ¿Pueden ayudarme?"
+);
 
 export default function WhatsAppButton() {
   return (
@@ -34,5 +34,5 @@ export default function WhatsAppButton() {
         </svg>
       </div>
     </a>
-  )
+  );
 }

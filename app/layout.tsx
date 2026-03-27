@@ -21,8 +21,7 @@ export const metadata: Metadata = {
     "Cocinas Modernas RD | Diseño y Fabricación de Cocinas de Lujo en República Dominicana",
   description:
     "Diseñamos y fabricamos cocinas modernas a medida en República Dominicana. Cocinas con isla, gabinetes modernos, muebles de cocina y más. Materiales premium en Santo Domingo.",
-  keywords:
-    "cocinas modernas, cocina moderna, cocinas modernas República Dominicana, cocina moderna en Santo Domingo, diseños de cocinas modernas, gabinetes de cocina modernos, cocinas modernas con isla, muebles de cocina modernos, cocinas modernas pequeñas, islas de cocina modernas, cocinas de madera modernas, cocinas modernas blancas, cocinas modernas de lujo, cocinas empotradas modernas, cocinas modulares modernas, diseño cocinas modernas, cocinas elegantes y modernas, cocinas modernas con isla central y desayunador, modelos de cocinas modernas, decoración de cocinas modernas",
+
   authors: [{ name: "Cocinas Modernas RD" }],
   openGraph: {
     title: "Cocinas Modernas RD | Gabinetes, Islas y Muebles de Cocina en RD",
@@ -34,7 +33,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=80",
+        url: "images/logoFull.png",
         width: 1200,
         height: 630,
         alt: "Cocinas Modernas RD",
@@ -72,7 +71,7 @@ export default function RootLayout({
         description:
           "Diseño y fabricación de cocinas modernas con isla, gabinetes de cocina modernos y muebles de cocina de lujo en República Dominicana.",
         url: "https://www.cocinasmodernasrd.com",
-        telephone: "+18091234567",
+        telephone: "+18493419890",
         email: "info@cocinasmodernasrd.com",
         address: {
           "@type": "PostalAddress",
@@ -110,6 +109,71 @@ export default function RootLayout({
                 name: "Cocinas modernas con isla",
               },
             },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Cocinas modulares",
+              },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Cocinas modernas pequeñas",
+              },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Cocinas americanas",
+              },
+            },
+
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Cocinas modernas vintage",
+              },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Cocinas elegantes",
+              },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Cocinas italianas",
+              },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Cocinas modernas con barra desayunadora",
+              },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "cocinas modernas rusticas",
+              },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Cocinas europeas",
+              },
+            },
+
             {
               "@type": "Offer",
               itemOffered: {

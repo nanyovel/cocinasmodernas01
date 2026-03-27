@@ -1,34 +1,36 @@
-import type { Metadata } from 'next'
-import Image from 'next/image'
-import Link from 'next/link'
-import Footer from '@/components/Footer'
-import LeadForm from '@/components/LeadForm'
-import { posts } from '../page'
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import Footer from "@/components/Footer";
+import LeadForm from "@/components/LeadForm";
+import { posts } from "../page";
 
-type Props = { params: { slug: string } }
+type Props = { params: { slug: string } };
 
 export async function generateStaticParams() {
-  return posts.map((p) => ({ slug: p.slug }))
+  return posts.map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = posts.find((p) => p.slug === params.slug)
-  if (!post) return {}
+  const post = posts.find((p) => p.slug === params.slug);
+  if (!post) return {};
   return {
     title: `${post.title} | Cocinas Modernas RD`,
     description: post.excerpt,
-    alternates: { canonical: `https://www.cocinasmodernasrd.com/blog/${post.slug}` },
+    alternates: {
+      canonical: `https://www.cocinasmodernasrd.com/blog/${post.slug}`,
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt,
       images: [{ url: post.img }],
     },
-  }
+  };
 }
 
 const articleContent: Record<string, string> = {
-  'tendencias-cocinas-modernas-2025': `
-Las cocinas modernas de 2025 están redefiniendo el hogar dominicano. Ya no se trata solo de un espacio funcional: la cocina moderna se convirtió en el centro del diseño interior, donde estética y tecnología conviven.
+  "tendencias-cocinas-modernas-2026": `
+Las cocinas modernas de 2026 están redefiniendo el hogar dominicano. Ya no se trata solo de un espacio funcional: la cocina moderna se convirtió en el centro del diseño interior, donde estética y tecnología conviven.
 
 ## 1. Materiales naturales en gabinetes modernos
 
@@ -40,7 +42,7 @@ En República Dominicana vemos especial demanda por muebles de cocina modernos e
 
 El monocromatismo domina. Cocinas modernas blancas, cocinas modernas grises o cocinas negras modernas donde gabinetes, encimera y paredes comparten la misma gama de color. El resultado es una cocina moderna elegante y lujosa sin esfuerzo visual.
 
-Los tonos más solicitados en Santo Domingo en 2025: verde salvia, gris antracita y blanco cálido mate.
+Los tonos más solicitados en Santo Domingo en 2026: verde salvia, gris antracita y blanco cálido mate.
 
 ## 3. Islas de cocina modernas con desayunador
 
@@ -61,7 +63,7 @@ La combinación de muebles de cocina modernos en madera con elementos metálicos
 ¿Quieres incorporar estas tendencias en tu hogar? Nuestro equipo de diseño te ayuda a crear la cocina moderna perfecta. Solicita tu cotización gratuita.
   `,
 
-  'cuarzo-vs-marmol-cual-elegir': `
+  "cuarzo-vs-marmol-cual-elegir": `
 Al diseñar cocinas modernas con isla o cocinas modernas con barra, una de las decisiones más importantes es la encimera. El cuarzo y el mármol son los materiales más elegidos en proyectos de cocinas de lujo modernas, pero tienen diferencias importantes.
 
 ## Mármol para cocinas modernas
@@ -89,7 +91,7 @@ En República Dominicana, el calor y la humedad hacen que el cuarzo o el granito
 ¿Necesitas ayuda eligiendo el material para tu cocina moderna? Contáctanos y te asesoramos gratis.
   `,
 
-  'cocinas-modernas-pequenas-con-isla': `
+  "cocinas-modernas-pequenas-con-isla": `
 Tener una cocina moderna pequeña no significa renunciar a la isla. Con el diseño correcto, una cocina moderna pequeña con isla puede ser tan funcional y elegante como cualquier cocina grande. Aquí los diseños que mejor funcionan.
 
 ## 1. Cocina moderna pequeña con isla lineal
@@ -121,7 +123,7 @@ Para instalar una isla en una cocina moderna pequeña necesitas al menos 90cm de
 ¿Tu cocina moderna pequeña tiene espacio para una isla? Nuestro equipo puede analizarlo gratis con un diseño 3D sin compromiso.
   `,
 
-  'gabinetes-de-cocina-modernos-materiales': `
+  "gabinetes-de-cocina-modernos-materiales": `
 Los gabinetes de cocina modernos son el componente más importante del diseño de cualquier cocina moderna. El material define durabilidad, precio, estética y mantenimiento. Aquí la comparación completa para el mercado dominicano.
 
 ## Gabinetes de cocina modernos en madera
@@ -151,8 +153,8 @@ Para presupuesto alto: madera maciza o MDF lacado. Para presupuesto medio: melam
 ¿Quieres ver muestras de gabinetes de cocina modernos en todos los materiales? Visítanos en Santo Domingo o solicita tu asesoría gratuita.
   `,
 
-  'cocinas-modernas-blancas-vs-oscuras': `
-En el diseño de cocinas modernas en República Dominicana, la decisión entre cocinas modernas blancas y cocinas oscuras modernas es una de las más frecuentes. Ambas son tendencia en 2025 y cada una tiene ventajas claras.
+  "cocinas-modernas-blancas-vs-oscuras": `
+En el diseño de cocinas modernas en República Dominicana, la decisión entre cocinas modernas blancas y cocinas oscuras modernas es una de las más frecuentes. Ambas son tendencia en 2026 y cada una tiene ventajas claras.
 
 ## Cocinas modernas blancas: ventajas
 
@@ -177,8 +179,8 @@ En RD, donde la luz natural es abundante, las cocinas oscuras modernas funcionan
 Nuestro equipo puede mostrarte ambas opciones en un diseño 3D personalizado. Solicita tu consulta gratuita hoy.
   `,
 
-  'cuanto-cuesta-cocina-moderna-rd': `
-Una de las preguntas más frecuentes que recibimos es: ¿cuánto cuesta una cocina moderna en República Dominicana? La respuesta depende del tamaño, los materiales y el nivel de detalle. Aquí los rangos reales del mercado en 2025.
+  "cuanto-cuesta-cocina-moderna-rd": `
+Una de las preguntas más frecuentes que recibimos es: ¿cuánto cuesta una cocina moderna en República Dominicana? La respuesta depende del tamaño, los materiales y el nivel de detalle. Aquí los rangos reales del mercado en 2026.
 
 ## Cocinas modernas económicas en RD
 
@@ -206,7 +208,7 @@ El tamaño de la cocina, el material de los gabinetes, la encimera elegida (gran
 
 ¿Quieres saber el precio exacto de tu cocina moderna? Solicita una cotización gratuita sin compromiso y recibe un presupuesto detallado.
   `,
-}
+};
 
 const defaultContent = `
 El diseño de cocinas modernas en República Dominicana ha evolucionado enormemente en los últimos años. Los propietarios de viviendas buscan espacios que no solo sean funcionales, sino que reflejen su personalidad y estilo de vida.
@@ -226,21 +228,31 @@ Una cocina bien diseñada puede aumentar el valor de tu propiedad entre un 10% y
 ---
 
 ¿Tienes preguntas sobre tu proyecto? Nuestro equipo está listo para ayudarte.
-`
+`;
 
 export default function BlogPost({ params }: Props) {
-  const post = posts.find((p) => p.slug === params.slug)
-  if (!post) return <div className="pt-40 text-center text-cream">Artículo no encontrado.</div>
+  const post = posts.find((p) => p.slug === params.slug);
+  if (!post)
+    return (
+      <div className="pt-40 text-center text-cream">
+        Artículo no encontrado.
+      </div>
+    );
 
-  const content = articleContent[params.slug] || defaultContent
-  const related = posts.filter((p) => p.slug !== params.slug).slice(0, 3)
+  const content = articleContent[params.slug] || defaultContent;
+  const related = posts.filter((p) => p.slug !== params.slug).slice(0, 3);
 
   return (
     <>
       {/* Hero */}
       <section className="relative h-[55vh] min-h-[400px] flex items-end pb-16 overflow-hidden">
         <div className="absolute inset-0">
-          <Image src={post.img} alt={post.title} fill className="object-cover" />
+          <Image
+            src={post.img}
+            alt={post.title}
+            fill
+            className="object-cover"
+          />
           <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/60 to-obsidian/20" />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto px-6 w-full">
@@ -248,9 +260,13 @@ export default function BlogPost({ params }: Props) {
             <span className="font-body text-xs tracking-widest uppercase text-gold border border-gold/30 px-3 py-1">
               {post.category}
             </span>
-            <span className="font-body text-xs text-cream/50">{post.date} · {post.readTime} lectura</span>
+            <span className="font-body text-xs text-cream/50">
+              {post.date} · {post.readTime} lectura
+            </span>
           </div>
-          <h1 className="font-display text-4xl md:text-5xl font-light text-cream">{post.title}</h1>
+          <h1 className="font-display text-4xl md:text-5xl font-light text-cream">
+            {post.title}
+          </h1>
         </div>
       </section>
 
@@ -263,25 +279,43 @@ export default function BlogPost({ params }: Props) {
               {post.excerpt}
             </p>
             <div className="prose-luxury font-body text-sm text-cream/70 leading-relaxed space-y-6">
-              {content.trim().split('\n\n').map((block, i) => {
-                if (block.startsWith('## ')) {
+              {content
+                .trim()
+                .split("\n\n")
+                .map((block, i) => {
+                  if (block.startsWith("## ")) {
+                    return (
+                      <h2
+                        key={i}
+                        className="font-display text-2xl text-cream mt-10 mb-4"
+                      >
+                        {block.replace("## ", "")}
+                      </h2>
+                    );
+                  }
+                  if (block.startsWith("---")) {
+                    return <div key={i} className="gold-line my-8" />;
+                  }
                   return (
-                    <h2 key={i} className="font-display text-2xl text-cream mt-10 mb-4">
-                      {block.replace('## ', '')}
-                    </h2>
-                  )
-                }
-                if (block.startsWith('---')) {
-                  return <div key={i} className="gold-line my-8" />
-                }
-                return <p key={i} className="leading-relaxed">{block}</p>
-              })}
+                    <p key={i} className="leading-relaxed">
+                      {block}
+                    </p>
+                  );
+                })}
             </div>
 
             {/* Tags */}
             <div className="flex flex-wrap gap-2 mt-12 pt-8 border-t border-gold/10">
-              {['Cocinas Modernas', 'Diseño RD', 'Tendencias', post.category].map((tag) => (
-                <span key={tag} className="font-body text-xs tracking-wider uppercase border border-gold/20 text-gold/60 px-3 py-1">
+              {[
+                "Cocinas Modernas",
+                "Diseño RD",
+                "Tendencias",
+                post.category,
+              ].map((tag) => (
+                <span
+                  key={tag}
+                  className="font-body text-xs tracking-wider uppercase border border-gold/20 text-gold/60 px-3 py-1"
+                >
                   {tag}
                 </span>
               ))}
@@ -300,20 +334,24 @@ export default function BlogPost({ params }: Props) {
 
             {/* WhatsApp */}
             <a
-              href="https://wa.me/18091234567?text=Hola,%20leí%20su%20blog%20y%20me%20interesa%20cotizar%20una%20cocina%20moderna"
+              href="https://wa.me/18493419890?text=Hola,%20leí%20su%20blog%20y%20me%20interesa%20cotizar%20una%20cocina%20moderna"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-4 border border-gold/20 bg-obsidian-soft p-5 hover:border-gold/50 transition-colors group"
             >
               <div className="w-10 h-10 bg-[#25D366] rounded-full flex items-center justify-center flex-shrink-0">
                 <svg className="w-5 h-5" fill="white" viewBox="0 0 24 24">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-                  <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.558 4.112 1.532 5.836L.057 23.882a.5.5 0 00.611.611l6.046-1.475A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.007-1.373l-.36-.213-3.727.909.927-3.619-.234-.372A9.818 9.818 0 1112 21.818z"/>
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                  <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.558 4.112 1.532 5.836L.057 23.882a.5.5 0 00.611.611l6.046-1.475A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.007-1.373l-.36-.213-3.727.909.927-3.619-.234-.372A9.818 9.818 0 1112 21.818z" />
                 </svg>
               </div>
               <div>
-                <p className="font-body text-xs text-gold group-hover:text-gold-light transition-colors">Consulta por WhatsApp</p>
-                <p className="font-body text-xs text-cream/40">Respuesta inmediata</p>
+                <p className="font-body text-xs text-gold group-hover:text-gold-light transition-colors">
+                  Consulta por WhatsApp
+                </p>
+                <p className="font-body text-xs text-cream/40">
+                  Respuesta inmediata
+                </p>
               </div>
             </a>
           </aside>
@@ -323,16 +361,31 @@ export default function BlogPost({ params }: Props) {
       {/* Related posts */}
       <section className="pb-24 px-6 md:px-12 lg:px-24 bg-obsidian-soft border-t border-gold/10 pt-16">
         <div className="max-w-7xl mx-auto">
-          <h3 className="font-display text-3xl text-cream mb-10">Artículos relacionados</h3>
+          <h3 className="font-display text-3xl text-cream mb-10">
+            Artículos relacionados
+          </h3>
           <div className="grid md:grid-cols-3 gap-8">
             {related.map((p) => (
-              <Link key={p.slug} href={`/blog/${p.slug}`} className="luxury-card group border border-gold/10 bg-obsidian overflow-hidden">
+              <Link
+                key={p.slug}
+                href={`/blog/${p.slug}`}
+                className="luxury-card group border border-gold/10 bg-obsidian overflow-hidden"
+              >
                 <div className="relative aspect-[16/9] overflow-hidden">
-                  <Image src={p.img} alt={p.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <Image
+                    src={p.img}
+                    alt={p.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
                 </div>
                 <div className="p-5">
-                  <p className="font-body text-xs text-gold mb-2 tracking-wider uppercase">{p.category}</p>
-                  <h4 className="font-display text-xl text-cream group-hover:text-gold transition-colors">{p.title}</h4>
+                  <p className="font-body text-xs text-gold mb-2 tracking-wider uppercase">
+                    {p.category}
+                  </p>
+                  <h4 className="font-display text-xl text-cream group-hover:text-gold transition-colors">
+                    {p.title}
+                  </h4>
                 </div>
               </Link>
             ))}
@@ -342,5 +395,5 @@ export default function BlogPost({ params }: Props) {
 
       <Footer />
     </>
-  )
+  );
 }
