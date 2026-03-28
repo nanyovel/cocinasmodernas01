@@ -12,7 +12,10 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = posts.find((p) => p.slug === params.slug);
+  // const post = posts.find((p) => p.slug === params.slug);
+
+  const { slug } = await params; // 👈 también aquí
+  const post = posts.find((p) => p.slug === slug);
   if (!post) return {};
   return {
     title: `${post.title} | Cocinas Modernas RD`,
@@ -230,8 +233,16 @@ Una cocina bien diseñada puede aumentar el valor de tu propiedad entre un 10% y
 ¿Tienes preguntas sobre tu proyecto? Nuestro equipo está listo para ayudarte.
 `;
 
-export default function BlogPost({ params }: Props) {
-  const post = posts.find((p) => p.slug === params.slug);
+export default async function BlogPost({ params }: Props) {
+  console.log(params);
+  // const post = posts.find((p) => p.slug === params.slug);
+  // const { slug } = await params;
+
+  const { slug } = await params;
+  const post = posts.find((p) => p.slug === slug);
+  console.log(posts);
+  console.log(post);
+
   if (!post)
     return (
       <div className="pt-40 text-center text-cream">
@@ -241,7 +252,8 @@ export default function BlogPost({ params }: Props) {
 
   const content = articleContent[params.slug] || defaultContent;
   const related = posts.filter((p) => p.slug !== params.slug).slice(0, 3);
-
+  // tendencias-cocinas-modernas-2026
+  // tendencias-cocinas-modernas-2026
   return (
     <>
       {/* Hero */}

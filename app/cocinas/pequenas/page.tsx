@@ -26,7 +26,7 @@ const data: CocinaPageData = {
   heroImageAlt:
     "Cocina modular moderna con gabinetes a medida en Santo Domingo República Dominicana",
   badge: "Cocinas Pequeñas",
-  h1: "Cocinas Modernas Pequeñas",
+  h1: "Cocina Modulares pequeñas",
   heroDesc:
     "¿Tienes un espacio reducido y quieres una cocina moderna que no sacrifique estilo ni funcionalidad? Nuestras cocinas modulares están diseñadas precisamente para eso. Fabricamos e instalamos cocinas modulares a medida en toda la República Dominicana, utilizando módulos en madera, PVC o melamina con acabados de lujo. Cada diseño se adapta inteligentemente a tu espacio, sin importar el tamaño.",
 

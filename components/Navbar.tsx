@@ -11,13 +11,13 @@ const cocinasSubmenu = [
   // entre 10 y 100 busquedas
   { href: "/cocinas/madera", label: "Cocinas en Madera" },
   { href: "/cocinas/americanas", label: "Cocinas Americanas" },
-  { href: "/cocinas/vintage", label: "Cocinas Vintage" },
-  { href: "/cocinas/elegantes", label: "Cocinas Elegantes" },
-  { href: "/cocinas/italianas", label: "Cocinas Italianas" },
-  {
-    href: "/cocinas/barra-desayunador",
-    label: "Cocinas con Barra Desayunador",
-  },
+  // { href: "/cocinas/vintage", label: "Cocinas Vintage" },
+  // { href: "/cocinas/elegantes", label: "Cocinas Elegantes" },
+  // { href: "/cocinas/italianas", label: "Cocinas Italianas" },
+  // {
+  //   href: "/cocinas/barra-desayunador",
+  //   label: "Cocinas con Barra Desayunador",
+  // },
 ];
 
 export default function Navbar() {

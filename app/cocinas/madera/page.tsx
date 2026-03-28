@@ -12,7 +12,7 @@ export const metadata: Metadata = {
       "Fabricamos cocinas de madera modernas a medida en República Dominicana. Cedro, caoba, teca y más.",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=1200&q=80",
+        url: "/images/woodKitchen.jpeg",
       },
     ],
   },
@@ -24,8 +24,7 @@ const data: CocinaPageData = {
   metaDescription:
     "Cocinas de madera modernas a medida en República Dominicana.",
 
-  heroImage:
-    "https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=1800&q=85",
+  heroImage: "/images/woodKitchen.jpeg",
   heroImageAlt:
     "Cocina de madera moderna con gabinetes de cedro en República Dominicana",
   badge: "Cocinas en Madera",
@@ -42,7 +41,7 @@ const data: CocinaPageData = {
 
   features: [
     {
-      icon: "🌳",
+      icon: "◈",
       title: "Madera seleccionada",
       desc: "Cedro, caoba, teca y roble. Cada tabla es seleccionada a mano para garantizar calidad y uniformidad.",
     },
@@ -66,33 +65,28 @@ const data: CocinaPageData = {
   gallery: [
     {
       src: "/images/woodKitchen.jpeg",
-      alt: "Cocina modular de madera con detalles en oro",
+      alt: "Cocina modular de madera natural",
       label: "Módulos en madera con isla central y desayunador",
     },
     {
-      src: "https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=800&q=80",
+      src: "/images/islaCentralConMadera.jpeg",
       alt: "Cocina de madera moderna con acabado natural en RD",
-      label: "Madera natural",
+      label: "Cocina de madera moderna pequeña con isla",
     },
     {
-      src: "https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?w=800&q=80",
-      alt: "Cocina moderna madera y blanco con isla",
-      label: "Madera y blanco",
+      src: "/images/mueblesKitchen.jpeg",
+      alt: "Cocina con sala de estar pequeña",
+      label: "Cocina con sala de estar pequeña",
     },
     {
-      src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80",
-      alt: "Cocina de madera oscura con gabinetes de caoba",
-      label: "Caoba oscura",
+      src: "/images/walnutKitchen.jpg",
+      alt: "Cocina de madera oscura con gabinetes tipo Walnut",
+      label: "Cocina de madera oscura con gabinetes tipo Walnut",
     },
     {
-      src: "https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=800&q=80",
-      alt: "Cocina de madera clara nórdica con encimera de cuarzo",
-      label: "Madera clara nórdica",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=800&q=80",
-      alt: "Muebles de cocina en madera con detalles dorados",
-      label: "Madera y detalles oro",
+      src: "/images/woodKitchen3.jpeg",
+      alt: "Cocina de madera oscura con iluminacion",
+      label: "Cocina de madera oscura con iluminacion",
     },
   ],
 
