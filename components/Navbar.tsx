@@ -3,9 +3,13 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 
 const cocinasSubmenu = [
+  // entre 100 y 1000 busquedas
   { href: "/cocinas/modulares", label: "Cocinas Modulares" },
-  { href: "/cocinas/madera", label: "Cocinas en Madera" },
   { href: "/cocinas/con-isla", label: "Cocinas con Isla" },
+  { href: "/cocinas/pequenas", label: "Cocinas modernas pequeñas" },
+
+  // entre 10 y 100 busquedas
+  { href: "/cocinas/madera", label: "Cocinas en Madera" },
   { href: "/cocinas/americanas", label: "Cocinas Americanas" },
   { href: "/cocinas/vintage", label: "Cocinas Vintage" },
   { href: "/cocinas/elegantes", label: "Cocinas Elegantes" },

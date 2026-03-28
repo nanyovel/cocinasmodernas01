@@ -62,15 +62,15 @@ const data: CocinaPageData = {
 
   gallery: [
     {
+      src: "/images/gabineteOrange.jpeg",
+      alt: "Cocina modular lineal moderna en melamina blanca",
+      label: "Cocina lineal moderna",
+    },
+    {
       src: "/images/islandKitchen.jpeg",
       // src: "/images/gabineteKitchen.jpeg",
       alt: "Cocina modular blanca con isla en Santo Domingo",
-      label: "Módulos con isla",
-    },
-    {
-      src: "/images/gabineteOrange.jpeg",
-      alt: "Cocina modular lineal moderna en melamina blanca",
-      label: "Lineal en melamina",
+      label: "Cocinas con isla",
     },
     {
       src: "/images/openKitchen.jpg",
@@ -80,14 +80,10 @@ const data: CocinaPageData = {
     },
     {
       src: "/images/gabineteKitchen.jpeg",
-      alt: "Cocina modular en L con desayunador moderno",
-      label: "En L con desayunador",
+      alt: "Cocina modular en U",
+      label: "Cocina modular en U",
     },
-    {
-      src: "/images/woodKitchen.jpeg",
-      alt: "Cocina modular de madera con detalles en oro",
-      label: "Módulos en madera con isla central y desayunador",
-    },
+
     {
       src: "/images/modernKitchen.jpeg",
       alt: "Mocinas modulares en kit",
