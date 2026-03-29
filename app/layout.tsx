@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Jost } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import Script from "next/script";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -229,10 +230,25 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${cormorant.variable} ${jost.variable}`}>
       <head>
-        <script
+        <Script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+
+        {/* <!-- Google tag (gtag.js) --> */}
+
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-LG32135RT9"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-LG32135RT9');
+          `}
+        </Script>
       </head>
       <body className="bg-obsidian text-cream font-body antialiased">
         <Navbar />
