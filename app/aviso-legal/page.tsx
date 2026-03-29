@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Aviso legal y términos de uso de Cocinas Modernas RD. Condiciones de uso del sitio web, propiedad intelectual y responsabilidades.",
   alternates: { canonical: "https://www.cocinasmodernasrd.com/aviso-legal" },
-  robots: { index: false, follow: false },
+  robots: { index: true, follow: true },
 };
 
 export default function AvisoLegalPage() {
