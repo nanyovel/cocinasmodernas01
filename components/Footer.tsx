@@ -54,6 +54,31 @@ export default function Footer() {
               ))}
             </ul>
           </div>
+          {/* Legal */}
+          <div>
+            <h4 className="font-body text-xs tracking-widest uppercase text-gold mb-6">
+              Legal
+            </h4>
+            <ul className="space-y-3">
+              {[
+                {
+                  href: "/politica-privacidad",
+                  label: "Política de Privacidad",
+                },
+                { href: "/politica-cookies", label: "Política de Cookies" },
+                { href: "/aviso-legal", label: "Aviso Legal" },
+              ].map((l) => (
+                <li key={l.href}>
+                  <Link
+                    href={l.href}
+                    className="font-body text-sm text-cream/50 hover:text-gold transition-colors"
+                  >
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
           {/* Contact */}
           <div>
@@ -102,7 +127,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Cocinas Modernas RD. Todos los derechos
             reservados.
           </p>
-          <p>
+          {/* <p>
             Diseñado por{" "}
             <a
               href="https://noarix.com"
@@ -112,7 +137,7 @@ export default function Footer() {
             >
               Noarix
             </a>{" "}
-          </p>
+          </p> */}
           <p>
             Cocinas modernas · Gabinetes modernos · Islas de cocina · Muebles de
             cocina · Santo Domingo, RD

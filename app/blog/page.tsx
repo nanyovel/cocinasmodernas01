@@ -29,7 +29,7 @@ export const posts = [
     excerpt:
       "En cocinas modernas con isla o con barra, la encimera define el estilo. Comparamos cuarzo y mármol en durabilidad, precio y estética para que elijas bien.",
     img: "/images/islandKitchen.jpeg",
-    date: "Febrero 2026",
+    date: "Marzo 2026",
     readTime: "7 min",
     category: "Materiales",
   },
@@ -39,7 +39,7 @@ export const posts = [
     excerpt:
       "Una cocina moderna pequeña también puede tener isla. Te mostramos modelos de cocinas modernas pequeñas con isla central, barra o peninsula que maximizan el espacio.",
     img: "/images/modernKitchen.jpeg",
-    date: "Enero 2026",
+    date: "Marzo 2026",
     readTime: "6 min",
     category: "Diseño",
   },
@@ -49,7 +49,7 @@ export const posts = [
     excerpt:
       "Gabinetes modernos en madera, gabinetes de cocina modernos en melamina o MDF. Comparamos materiales, precios y cuál es mejor para el clima de República Dominicana.",
     img: "/images/gabineteOrange.jpeg",
-    date: "Diciembre 2024",
+    date: "Marzo 2026",
     readTime: "8 min",
     category: "Materiales",
   },
@@ -59,7 +59,7 @@ export const posts = [
     excerpt:
       "Cocinas modernas blancas y elegantes o cocinas negras modernas con madera: ¿cuál te conviene? Analizamos estética, mantenimiento y cuál se adapta mejor al hogar dominicano.",
     img: "/images/marmolKitchenMedium.jpg",
-    date: "Noviembre 2024",
+    date: "Marzo 2026",
     readTime: "5 min",
     category: "Diseño",
   },
@@ -69,7 +69,7 @@ export const posts = [
     excerpt:
       "Precios reales de cocinas modernas en RD: desde muebles de cocina modernos económicos hasta cocinas de lujo con isla y granito. Presupuesto, materiales y factores que influyen.",
     img: "/images/moderKitchen3.jpg",
-    date: "Octubre 2024",
+    date: "Marzo 2026",
     readTime: "8 min",
     category: "Guías",
   },

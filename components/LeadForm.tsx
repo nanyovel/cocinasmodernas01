@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useState } from "react";
 // import { addDoc, collection, doc, writeBatch } from "firebase/firestore";
 // import db from "../firebase/firebaseConfig";
@@ -11,6 +12,7 @@ export default function LeadForm({ compact = false }: { compact?: boolean }) {
     presupuesto: "",
     mensaje: "",
   });
+  const [acepta, setAcepta] = useState(false);
   const [status, setStatus] = useState<
     "idle" | "sending" | "success" | "error"
   >("idle");
@@ -32,7 +34,7 @@ export default function LeadForm({ compact = false }: { compact?: boolean }) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
+    if (!acepta) return;
     const { nombre, telefono, email, presupuesto, mensaje } = form;
 
     try {
@@ -191,10 +193,79 @@ export default function LeadForm({ compact = false }: { compact?: boolean }) {
               className={inputClass}
             />
           )}
+          {/* ── CHECKBOX DE CONSENTIMIENTO ── */}
+          <div
+            className={`flex items-start gap-3 p-4 border transition-colors duration-200 ${
+              acepta
+                ? "border-gold/40 bg-obsidian-light"
+                : "border-gold/10 bg-obsidian-light/50"
+            }`}
+          >
+            <button
+              type="button"
+              onClick={() => setAcepta(!acepta)}
+              className={`flex-shrink-0 w-5 h-5 border mt-0.5 flex items-center justify-center transition-all duration-200 ${
+                acepta
+                  ? "bg-gold border-gold"
+                  : "bg-transparent border-gold/40 hover:border-gold/70"
+              }`}
+              aria-label="Aceptar términos y condiciones"
+            >
+              {acepta && (
+                <svg
+                  className="w-3 h-3 text-obsidian"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={3}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+              )}
+            </button>
+            <p className="font-body text-[11px] text-cream/50 leading-relaxed">
+              He leído y acepto la Política de Privacidad y el Aviso Legal.
+            </p>
+            {/* <p className="font-body text-[11px] text-cream/50 leading-relaxed">
+              Acepto la{" "}
+              <Link
+                href="/politica-privacidad"
+                target="_blank"
+                className="text-gold hover:text-gold-light underline"
+              >
+                Política de Privacidad
+              </Link>{" "}
+              y autorizo el uso de mis datos para recibir información comercial
+              y propuestas de cotización de Cocinas Modernas RD y{" "}
+              <strong className="text-cream/70">
+                empresas del sector de cocinas y diseño de interiores
+              </strong>
+              . Entiendo que mis datos podrán ser compartidos con terceros
+              relacionados con el sector para este fin. Ver{" "}
+              <Link
+                href="/aviso-legal"
+                target="_blank"
+                className="text-gold hover:text-gold-light underline"
+              >
+                Aviso Legal
+              </Link>
+              .
+            </p> */}
+          </div>
+
+          {!acepta && status === "idle" && (
+            <p className="font-body text-[10px] text-gold/50 text-center">
+              Debes aceptar los términos para enviar tu solicitud
+            </p>
+          )}
           <button
             type="submit"
-            disabled={status === "sending"}
-            className="btn-gold w-full flex items-center justify-center gap-3 disabled:opacity-60"
+            disabled={status === "sending" || !acepta}
+            className="btn-gold w-full flex items-center justify-center gap-3 disabled:opacity-40 disabled:cursor-not-allowed"
           >
             {status === "sending" ? (
               <>

@@ -252,8 +252,6 @@ export default async function BlogPost({ params }: Props) {
 
   const content = articleContent[params.slug] || defaultContent;
   const related = posts.filter((p) => p.slug !== params.slug).slice(0, 3);
-  // tendencias-cocinas-modernas-2026
-  // tendencias-cocinas-modernas-2026
   return (
     <>
       {/* Hero */}
@@ -319,10 +317,12 @@ export default async function BlogPost({ params }: Props) {
             {/* Tags */}
             <div className="flex flex-wrap gap-2 mt-12 pt-8 border-t border-gold/10">
               {[
-                "Cocinas Modernas",
-                "Diseño RD",
-                "Tendencias",
-                post.category,
+                ...new Set([
+                  "Cocinas Modernas",
+                  "Diseño RD",
+                  "Tendencias",
+                  post.category,
+                ]),
               ].map((tag) => (
                 <span
                   key={tag}
