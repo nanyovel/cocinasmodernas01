@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Cocinas modulares modernas en Santo Domingo y toda la República Dominicana. Desde muebles modulares para cocinas pequeñas y gabinetes modulares para cocina hasta módulos a medida en madera, PVC y melamina. Instalación rápida, garantía 2 años. Cotiza gratis.",
   alternates: {
-    canonical: "https://www.cocinasmodernasrd.com/cocinas/modulares",
+    canonical: "https://cocinasmodernasrd.com/cocinas/modulares",
   },
   openGraph: {
     title: "Cocinas Modulares RD | Diseño Moderno a Medida",

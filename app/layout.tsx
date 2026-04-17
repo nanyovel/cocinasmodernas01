@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true },
   },
   alternates: {
-    canonical: "https://www.cocinasmodernasrd.com",
+    canonical: "https://cocinasmodernasrd.com",
   },
 };
 

@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Política de privacidad de Cocinas Modernas RD. Cómo recopilamos, usamos y protegemos tus datos personales conforme a la Ley 172-13 de República Dominicana.",
   alternates: {
-    canonical: "https://www.cocinasmodernasrd.com/politica-privacidad",
+    canonical: "https://cocinasmodernasrd.com/politica-privacidad",
   },
   robots: { index: true, follow: true },
 };

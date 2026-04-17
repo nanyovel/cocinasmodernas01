@@ -140,7 +140,7 @@ export default function Footer() {
           </p> */}
           <p>
             Cocinas modernas · Gabinetes modernos · Islas de cocina · Muebles de
-            cocina · Santo Domingo, RD
+            cocina · Santo Domingo, Republica Dominicana
           </p>
         </div>
       </div>
