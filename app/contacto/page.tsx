@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     "Contacto | Cotización Gratis de Cocinas Modernas con Isla, Gabinetes y Muebles en RD",
   description:
     "Solicita cotización gratuita de cocinas modernas en República Dominicana. Cocinas modernas con isla, gabinetes modernos, muebles de cocina. Respondemos en menos de 24 horas en Santo Domingo.",
-  alternates: { canonical: "https://www.cocinasmodernasrd.com/contacto" },
+  alternates: { canonical: "https://cocinasmodernasrd.com/contacto" },
 };
 
 const contactInfo = [

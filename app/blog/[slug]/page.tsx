@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${post.title} | Cocinas Modernas RD`,
     description: post.excerpt,
     alternates: {
-      canonical: `https://www.cocinasmodernasrd.com/blog/${post.slug}`,
+      canonical: `https://cocinasmodernasrd.com/blog/${post.slug}`,
     },
     openGraph: {
       title: post.title,

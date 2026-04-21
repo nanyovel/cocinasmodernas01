@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     "Blog | Cocinas Modernas: Diseños, Precios, Materiales y Tendencias en RD",
   description:
     "Guías sobre cocinas modernas pequeñas, cocinas con isla, gabinetes de cocina modernos, muebles de cocina, colores de moda y precios en República Dominicana.",
-  alternates: { canonical: "https://www.cocinasmodernasrd.com/blog" },
+  alternates: { canonical: "https://cocinasmodernasrd.com/blog" },
 };
 
 export const posts = [

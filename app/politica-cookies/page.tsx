@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Política de cookies de Cocinas Modernas RD. Qué cookies usamos, para qué sirven y cómo gestionarlas o desactivarlas.",
   alternates: {
-    canonical: "https://www.cocinasmodernasrd.com/politica-cookies",
+    canonical: "https://cocinasmodernasrd.com/politica-cookies",
   },
   robots: { index: true, follow: true },
 };

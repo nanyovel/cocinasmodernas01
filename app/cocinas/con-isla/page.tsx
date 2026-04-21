@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Cocinas modernas con isla central en Santo Domingo y toda la República Dominicana. Islas con desayunador, cuarzo, granito y mármol. Diseño 3D gratis. Cotiza ahora.",
   alternates: {
-    canonical: "https://www.cocinasmodernasrd.com/cocinas/con-isla",
+    canonical: "https://cocinasmodernasrd.com/cocinas/con-isla",
   },
   openGraph: {
     title: "Cocinas con Isla RD | Isla Central, Desayunador y Barra",

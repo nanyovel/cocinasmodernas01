@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     "Galería de Cocinas Modernas | Proyectos con Isla, Gabinetes y Muebles en RD",
   description:
     "Galería de cocinas modernas diseñadas y fabricadas en República Dominicana. Cocinas blancas, oscuras, con isla central, gabinetes modernos en madera, PVC y melamina. Ver diseños reales.",
-  alternates: { canonical: "https://www.cocinasmodernasrd.com/galeria" },
+  alternates: { canonical: "https://cocinasmodernasrd.com/galeria" },
 };
 
 const projects = [

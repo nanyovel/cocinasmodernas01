@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Cocinas americanas modernas en Santo Domingo y toda la República Dominicana. Diseño open concept integrado con sala y comedor. Barra americana, isla y desayunador. Cotiza gratis.",
   alternates: {
-    canonical: "https://www.cocinasmodernasrd.com/cocinas/americanas",
+    canonical: "https://cocinasmodernasrd.com/cocinas/americanas",
   },
   openGraph: {
     title: "Cocinas Americanas RD | Open Concept Integrado con Sala",

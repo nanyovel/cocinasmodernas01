@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Cocinas de Madera Modernas en República Dominicana | Diseño de Lujo",
   description:
     "Cocinas de madera modernas en Santo Domingo y toda la República Dominicana. Cedro, caoba, teca y roble con acabados de lujo. Muebles de cocina en madera a medida. Cotiza gratis.",
-  alternates: { canonical: "https://www.cocinasmodernasrd.com/cocinas/madera" },
+  alternates: { canonical: "https://cocinasmodernasrd.com/cocinas/madera" },
   openGraph: {
     title: "Cocinas de Madera Modernas RD | Diseño Natural y Lujoso",
     description:
