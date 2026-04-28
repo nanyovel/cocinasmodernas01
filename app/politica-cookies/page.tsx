@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://cocinasmodernasrd.com/politica-cookies",
   },
-  robots: { index: true, follow: true },
+  robots: { index: false, follow: true },
 };
 
 const cookieTable = [

@@ -13,11 +13,6 @@ export const metadata: Metadata = {
     title: "Cocinas con Isla RD | Isla Central, Desayunador y Barra",
     description:
       "Diseñamos cocinas con isla central en República Dominicana. Islas con desayunador, granito y cuarzo.",
-    images: [
-      {
-        url: "/images/islandKitchen2.jpeg",
-      },
-    ],
   },
 };
 

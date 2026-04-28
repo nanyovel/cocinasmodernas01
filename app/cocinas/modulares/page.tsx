@@ -12,7 +12,6 @@ export const metadata: Metadata = {
     title: "Cocinas Modulares RD | Diseño Moderno a Medida",
     description:
       "Cocinas modulares modernas diseñadas y fabricadas en República Dominicana. Solicita tu cotización gratuita.",
-    images: [{ url: "/images/marmolKitchen.jpeg" }],
   },
 };
 

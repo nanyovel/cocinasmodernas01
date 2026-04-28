@@ -12,11 +12,6 @@ export const metadata: Metadata = {
     title: "Cocinas Americanas RD | Open Concept Integrado con Sala",
     description:
       "Cocinas americanas modernas en República Dominicana. Open concept, barra americana e isla integrada.",
-    images: [
-      {
-        url: "/images/walnutKitchen.jpg",
-      },
-    ],
   },
 };
 

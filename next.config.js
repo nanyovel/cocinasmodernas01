@@ -9,17 +9,6 @@ const nextConfig = {
     ],
   },
 
-  async redirects() {
-    return [
-      {
-        source: "/:path*",
-        has: [{ type: "host", value: "www.cocinasmodernasrd.com" }],
-        destination: "https://cocinasmodernasrd.com/:path*",
-        permanent: true,
-      },
-    ];
-  },
-
   async headers() {
     return [
       {

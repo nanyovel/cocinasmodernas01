@@ -28,18 +28,10 @@ export const metadata: Metadata = {
     title: "Cocinas Modernas RD | Gabinetes, Islas y Muebles de Cocina en RD",
     description:
       "Cocinas modernas con isla, gabinetes modernos y muebles de cocina de lujo en República Dominicana. Solicita tu cotización gratis.",
-    url: "https://www.cocinasmodernasrd.com",
+    url: "https://cocinasmodernasrd.com",
     siteName: "Cocinas Modernas RD",
     locale: "es_DO",
     type: "website",
-    images: [
-      {
-        url: "images/logoFull.png",
-        width: 1200,
-        height: 630,
-        alt: "Cocinas Modernas RD",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -67,11 +59,11 @@ export default function RootLayout({
     "@graph": [
       {
         "@type": "LocalBusiness",
-        "@id": "https://www.cocinasmodernasrd.com/#business",
+        "@id": "https://cocinasmodernasrd.com/#business",
         name: "Cocinas Modernas RD",
         description:
           "Diseño y fabricación de cocinas modernas con isla, gabinetes de cocina modernos y muebles de cocina de lujo en República Dominicana.",
-        url: "https://www.cocinasmodernasrd.com",
+        url: "https://cocinasmodernasrd.com",
         telephone: "+18493419890",
         email: "info@cocinasmodernasrd.com",
         address: {
@@ -219,8 +211,8 @@ export default function RootLayout({
       },
       {
         "@type": "WebSite",
-        "@id": "https://www.cocinasmodernasrd.com/#website",
-        url: "https://www.cocinasmodernasrd.com",
+        "@id": "https://cocinasmodernasrd.com/#website",
+        url: "https://cocinasmodernasrd.com",
         name: "Cocinas Modernas RD",
         inLanguage: "es",
       },

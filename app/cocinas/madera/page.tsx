@@ -10,11 +10,6 @@ export const metadata: Metadata = {
     title: "Cocinas de Madera Modernas RD | Diseño Natural y Lujoso",
     description:
       "Fabricamos cocinas de madera modernas a medida en República Dominicana. Cedro, caoba, teca y más.",
-    images: [
-      {
-        url: "/images/woodKitchen.jpeg",
-      },
-    ],
   },
 };
 

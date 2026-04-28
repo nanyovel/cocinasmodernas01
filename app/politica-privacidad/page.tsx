@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://cocinasmodernasrd.com/politica-privacidad",
   },
-  robots: { index: true, follow: true },
+  robots: { index: false, follow: true },
 };
 
 export default function PoliticaPrivacidadPage() {
