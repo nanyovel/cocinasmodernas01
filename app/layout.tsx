@@ -241,6 +241,11 @@ export default function RootLayout({
             gtag('config', 'G-LG32135RT9');
           `}
         </Script>
+        <Script
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2984831535094642"
+          strategy="afterInteractive"
+          crossOrigin="anonymous"
+        />
       </head>
       <body className="bg-obsidian text-cream font-body antialiased">
         <Navbar />
