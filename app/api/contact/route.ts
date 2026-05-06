@@ -4,7 +4,6 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
   const correoGmail = "jperezjimenez06@gmail.com";
-  const correoNoarix = "jperez@noarix.com";
   try {
     const body = await req.json();
 
@@ -16,7 +15,7 @@ export async function POST(req: Request) {
 
     await resend.emails.send({
       from: "Cocina modular web <onboarding@resend.dev>",
-      to: [correoGmail, correoNoarix],
+      to: [correoGmail],
       replyTo: email,
       subject: "Cocina Modular - Nuevo cliente interesado",
       html: `
