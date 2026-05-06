@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     "Servicios | Cocinas Modernas, Gabinetes, Islas y Muebles de Cocina en RD",
   description:
     "Fabricamos cocinas modernas con isla, gabinetes de cocina modernos, muebles de cocina modernos, closets y mobiliario a medida en República Dominicana. Cocinas modernas en madera y melamina.",
-  alternates: { canonical: "https://www.cocinasmodernasrd.com/servicios" },
+  alternates: { canonical: "https://cocinasmodernasrd.com/servicios" },
 };
 
 const services = [

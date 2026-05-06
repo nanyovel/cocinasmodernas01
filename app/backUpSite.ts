@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { posts } from "./blog/page";
 
 // export default function sitemap(): MetadataRoute.Sitemap {
-//   const base = 'https://www.cocinasmodernasrd.com'
+//   const base = 'https://cocinasmodernasrd.com'
 
 //   const staticRoutes = ['', '/servicios', '/galeria', '/blog', '/contacto'].map((path) => ({
 //     url: `${base}${path}`,
@@ -22,7 +22,7 @@ import { posts } from "./blog/page";
 // }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://www.cocinasmodernasrd.com";
+  const base = "https://cocinasmodernasrd.com";
 
   // 1. Rutas principales
   const staticRoutes = ["", "/servicios", "/galeria", "/blog", "/contacto"].map(
