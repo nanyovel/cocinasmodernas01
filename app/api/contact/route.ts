@@ -4,7 +4,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
   const correoGmail = "jperezjimenez06@gmail.com";
-  const correoLimpidos = "jperez@limpidos.com";
+  const correoNoarix = "jperez@noarix.com";
   try {
     const body = await req.json();
 
@@ -15,10 +15,10 @@ export async function POST(req: Request) {
     }
 
     await resend.emails.send({
-      from: "José Pérez - Limpidos <jperez@limpidos.com>",
-      to: [correoGmail, correoLimpidos],
+      from: "Cocina modular web <onboarding@resend.dev>",
+      to: [correoGmail, correoNoarix],
       replyTo: email,
-      subject: "Limpidos - Nuevo cliente interesado",
+      subject: "Cocina Modular - Nuevo cliente interesado",
       html: `
       <h2>Nuevo cliente interesado</h2>
 
@@ -38,7 +38,7 @@ export async function POST(req: Request) {
 
       <hr>
 
-      <p>Este mensaje fue enviado desde limpidos.com</p>
+      <p>Este mensaje fue enviado desde cocinasmodernasrd.com/</p>
       `,
     });
 
