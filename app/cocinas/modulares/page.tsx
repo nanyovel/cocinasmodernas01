@@ -27,7 +27,7 @@ const data: CocinaPageData = {
   badge: "Cocinas Modulares",
   h1: "Cocinas modulares",
   heroDesc:
-    "Diseñamos y fabricamos cocinas modulares con la flexibilidad de adaptarse a cualquier espacio. Módulos en madera, PVC o melamina con acabados de lujo en toda la República Dominicana.",
+    "Diseñamos y fabricamos cocinas modulares adaptadas a cualquier espacio. Elaboramos módulos en madera, PVC y melamina, con elegantes terminaciones en mármol, granito, cuarzo, vidrio, herrajes de alta calidad y otros materiales premium, para crear cocinas modernas, funcionales y personalizadas en toda la República Dominicana.",
 
   introTitle: "La solución más versátil para tu hogar",
   introBody: [
