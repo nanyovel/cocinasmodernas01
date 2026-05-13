@@ -125,7 +125,15 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 font-body text-xs text-cream/30">
           <p>
             © {new Date().getFullYear()} Cocinas Modernas RD. Todos los derechos
-            reservados.
+            reservados. Diseñado por{" "}
+            <a
+              href="https://noarix.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors duration-300 hover:text-[#c9a84c] hover:underline"
+            >
+              Noarix
+            </a>
           </p>
           {/* <p>
             Diseñado por{" "}
