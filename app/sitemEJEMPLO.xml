@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- 🏠 HOME -->
+  <url>
+    <loc>https://www.cocinasmodernasrd.com/</loc>
+    <lastmod>2026-03-29</lastmod>
+  </url>
+
+  <!-- 🧱 PÁGINAS PRINCIPALES -->
+  <url>
+    <loc>https://www.cocinasmodernasrd.com/servicios</loc>
+  </url>
+  <url>
+    <loc>https://www.cocinasmodernasrd.com/galeria</loc>
+  </url>
+  <url>
+    <loc>https://www.cocinasmodernasrd.com/contacto</loc>
+  </url>
+
+  <!-- 🧩 LANDING PADRE (MUY IMPORTANTE) -->
+  <url>
+    <loc>https://www.cocinasmodernasrd.com/cocinas</loc>
+  </url>
+
+  <!-- 🧱 CATEGORÍAS DE PRODUCTO -->
+  <url>
+    <loc>https://www.cocinasmodernasrd.com/cocinas/modulares</loc>
+  </url>
+  <url>
+    <loc>https://www.cocinasmodernasrd.com/cocinas/pequenas</loc>
+  </url>
+  <url>
+    <loc>https://www.cocinasmodernasrd.com/cocinas/con-isla</loc>
+  </url>
+  <url>
+    <loc>https://www.cocinasmodernasrd.com/cocinas/madera</loc>
+  </url>
+  <url>
+    <loc>https://www.cocinasmodernasrd.com/cocinas/americanas</loc>
+  </url>
+
+  <!-- 🧠 BLOG (HUB) -->
+  <url>
+    <loc>https://www.cocinasmodernasrd.com/blog</loc>
+  </url>
+
+  <!-- 📂 CATEGORÍAS DE BLOG (CLAVE PARA ADSENSE) -->
+  <url>
+    <loc>https://www.cocinasmodernasrd.com/blog/cocinas-modernas</loc>
+  </url>
+  <url>
+    <loc>https://www.cocinasmodernasrd.com/blog/diseno-de-cocinas</loc>
+  </url>
+  <url>
+    <loc>https://www.cocinasmodernasrd.com/blog/materiales</loc>
+  </url>
+  <url>
+    <loc>https://www.cocinasmodernasrd.com/blog/precios</loc>
+  </url>
+  <url>
+    <loc>https://www.cocinasmodernasrd.com/blog/tendencias</loc>
+  </url>
+
+  <!-- 📝 POSTS (EJEMPLOS BIEN DISTRIBUIDOS) -->
+  <url>
+    <loc>https://www.cocinasmodernasrd.com/blog/tendencias-cocinas-2026</loc>
+  </url>
+  <url>
+    <loc>https://www.cocinasmodernasrd.com/blog/mejores-colores-cocinas-pequenas</loc>
+  </url>
+  <url>
+    <loc>https://www.cocinasmodernasrd.com/blog/cocina-con-isla-requisitos</loc>
+  </url>
+  <url>
+    <loc>https://www.cocinasmodernasrd.com/blog/cuarzo-vs-marmol</loc>
+  </url>
+  <url>
+    <loc>https://www.cocinasmodernasrd.com/blog/materiales-gabinetes-cocina</loc>
+  </url>
+  <url>
+    <loc>https://www.cocinasmodernasrd.com/blog/cuanto-cuesta-cocina-rd</loc>
+  </url>
+  <url>
+    <loc>https://www.cocinasmodernasrd.com/blog/errores-al-diseniar-cocina</loc>
+  </url>
+  <url>
+    <loc>https://www.cocinasmodernasrd.com/blog/ideas-cocinas-modernas</loc>
+  </url>
+
+  <!-- ⚖️ PÁGINAS LEGALES -->
+  <url>
+    <loc>https://www.cocinasmodernasrd.com/politica-privacidad</loc>
+  </url>
+  <url>
+    <loc>https://www.cocinasmodernasrd.com/politica-cookies</loc>
+  </url>
+  <url>
+    <loc>https://www.cocinasmodernasrd.com/aviso-legal</loc>
+  </url>
+
+</urlset>

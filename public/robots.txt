@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://cocinasmodernasrd.com
+
+# Sitemaps
+Sitemap: https://cocinasmodernasrd.com/sitemap.xml
