@@ -8,6 +8,7 @@ const PAGE_TITLE = "Servicios y Proceso | Cocinas Modernas RD";
 const PAGE_DESCRIPTION =
   "Diseño 3D, fabricación e instalación de cocinas modernas en Santo Domingo y toda República Dominicana. Conoce nuestro proceso, de la consulta a la garantía.";
 const PAGE_URL = "https://cocinasmodernasrd.com/servicios";
+const PAGE_IMAGE = "https://cocinasmodernasrd.com/images/modernKitchen.jpeg";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -17,6 +18,14 @@ export const metadata: Metadata = {
     title: PAGE_TITLE,
     description: PAGE_DESCRIPTION,
     url: PAGE_URL,
+    type: "website",
+    images: [{ url: PAGE_IMAGE, width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
+    images: [PAGE_IMAGE],
   },
 };
 
@@ -45,6 +54,25 @@ const categories = [
     img: "/images/gabineteKitchen.jpeg",
     imgAlt: "Gabinetes de cocina modernos en madera con repisas flotantes",
     href: "/cocinas/madera",
+  },
+  {
+    // 👇 agregado — antes /servicios no enlazaba a esta página
+    icon: "📐",
+    title: "Cocinas Pequeñas",
+    desc: "Diseños optimizados para apartamentos y espacios reducidos, sin sacrificar almacenamiento ni estética. Islas, barras y peninsulas a medida del espacio.",
+    img: "/images/marmolKitchenMedium.jpg",
+    imgAlt: "Cocina moderna pequeña optimizada en apartamento en Santo Domingo",
+    href: "/cocinas/pequenas",
+  },
+  {
+    // 👇 agregado — antes /servicios no enlazaba a esta página
+    icon: "🍽️",
+    title: "Cocinas Americanas",
+    desc: "Cocinas abiertas hacia la sala o el comedor, integradas al resto del hogar. Ideales para apartamentos modernos y casas de concepto abierto.",
+    img: "/images/islandKitchen.jpeg",
+    imgAlt:
+      "Cocina americana moderna integrada a la sala en República Dominicana",
+    href: "/cocinas/americanas",
   },
 ];
 
@@ -96,12 +124,42 @@ export default function ServiciosPage() {
     ],
   };
 
+  // Service schema — ayuda a que Google entienda la oferta como conjunto de servicios
+  const serviceJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "Diseño y fabricación de cocinas modernas",
+    provider: {
+      "@type": "LocalBusiness",
+      name: "Cocinas Modernas RD",
+      url: "https://cocinasmodernasrd.com",
+    },
+    areaServed: "República Dominicana",
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Categorías de cocinas",
+      itemListElement: categories.map((c) => ({
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: c.title,
+          url: `https://cocinasmodernasrd.com${c.href}`,
+        },
+      })),
+    },
+  };
+
   return (
     <>
       <Script
         id="breadcrumb-schema-servicios"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <Script
+        id="service-schema-servicios"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
       />
 
       {/* Header */}
@@ -190,6 +248,22 @@ export default function ServiciosPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Cross-link al blog de precios — visitantes de /servicios buscan justo esto */}
+      <section className="pb-24 px-6">
+        <div className="max-w-3xl mx-auto text-center border-t border-gold/10 pt-16">
+          <p className="font-body text-sm text-cream/50 mb-4">
+            ¿Quieres saber cuánto cuesta tu proyecto antes de agendar una
+            consulta?
+          </p>
+          <Link
+            href="/blog/cuanto-cuesta-cocina-modular-rd"
+            className="font-body text-xs tracking-widest uppercase text-gold border-b border-gold/40 pb-1 hover:border-gold transition-colors"
+          >
+            Ver rangos de precios en RD →
+          </Link>
         </div>
       </section>
 

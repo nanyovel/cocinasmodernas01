@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/og-cocinas-modernas.jpg", // sube una imagen 1200x630 real de un proyecto
+        url: "/images/opengraph-image.jpg", // sube una imagen 1200x630 real de un proyecto
         width: 1200,
         height: 630,
         alt: "Cocinas Modernas RD - Diseño y fabricación en Santo Domingo",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: Title,
     description: Description,
-    images: ["/images/og-cocinas-modernas.jpg"],
+    images: ["/images/opengraph-image.jpg"],
   },
   robots: {
     index: true,
@@ -77,7 +77,7 @@ export default function RootLayout({
         telephone: "+18493419890",
         email: "info@cocinasmodernasrd.com",
         priceRange: "$$$",
-        image: "https://cocinasmodernasrd.com/images/og-cocinas-modernas.jpg",
+        image: "https://cocinasmodernasrd.com/images/opengraph-image.jpg",
         address: {
           "@type": "PostalAddress",
           addressLocality: "Santo Domingo",

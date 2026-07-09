@@ -3,12 +3,35 @@ import Link from "next/link";
 import Image from "next/image";
 import Footer from "@/components/Footer";
 
+const PAGE_TITLE =
+  "Blog | Cocinas Modernas: Diseños, Precios, Materiales y Tendencias en RD";
+const PAGE_DESCRIPTION =
+  "Guías sobre cocinas modernas pequeñas, cocinas con isla, gabinetes de cocina modernos, muebles de cocina, colores de moda y precios en República Dominicana.";
+const PAGE_URL = "https://cocinasmodernasrd.com/blog";
+
 export const metadata: Metadata = {
-  title:
-    "Blog | Cocinas Modernas: Diseños, Precios, Materiales y Tendencias en RD",
-  description:
-    "Guías sobre cocinas modernas pequeñas, cocinas con isla, gabinetes de cocina modernos, muebles de cocina, colores de moda y precios en República Dominicana.",
-  alternates: { canonical: "https://cocinasmodernasrd.com/blog" },
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
+  alternates: { canonical: PAGE_URL },
+  openGraph: {
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
+    url: PAGE_URL,
+    type: "website",
+    images: [
+      {
+        url: "https://cocinasmodernasrd.com/images/gabineteKitchen.jpeg",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
+    images: ["https://cocinasmodernasrd.com/images/gabineteKitchen.jpeg"],
+  },
 };
 
 export const posts = [
@@ -20,6 +43,7 @@ export const posts = [
       "Las cocinas modernas de 2026 combinan materiales naturales, gabinetes de cocina modernos en tonos neutros e islas de cocina modernas con desayunador. Descubre qué está marcando la pauta.",
     img: "/images/gabineteKitchen.jpeg",
     date: "Marzo 2026",
+    isoDate: "2026-03-01",
     readTime: "5 min",
     category: "Tendencias",
   },
@@ -30,6 +54,7 @@ export const posts = [
       "En cocinas modernas con isla o con barra, la encimera define el estilo. Comparamos cuarzo y mármol en durabilidad, precio y estética para que elijas bien.",
     img: "/images/islandKitchen.jpeg",
     date: "Marzo 2026",
+    isoDate: "2026-03-01",
     readTime: "7 min",
     category: "Materiales",
   },
@@ -40,6 +65,7 @@ export const posts = [
       "Una cocina moderna pequeña también puede tener isla. Te mostramos modelos de cocinas modernas pequeñas con isla central, barra o peninsula que maximizan el espacio.",
     img: "/images/modernKitchen.jpeg",
     date: "Marzo 2026",
+    isoDate: "2026-03-01",
     readTime: "6 min",
     category: "Diseño",
   },
@@ -50,6 +76,7 @@ export const posts = [
       "Gabinetes modernos en madera, gabinetes de cocina modernos en melamina o MDF. Comparamos materiales, precios y cuál es mejor para el clima de República Dominicana.",
     img: "/images/gabineteOrange.jpeg",
     date: "Marzo 2026",
+    isoDate: "2026-03-01",
     readTime: "8 min",
     category: "Materiales",
   },
@@ -60,16 +87,19 @@ export const posts = [
       "Cocinas modernas blancas y elegantes o cocinas negras modernas con madera: ¿cuál te conviene? Analizamos estética, mantenimiento y cuál se adapta mejor al hogar dominicano.",
     img: "/images/marmolKitchenMedium.jpg",
     date: "Marzo 2026",
+    isoDate: "2026-03-01",
     readTime: "5 min",
     category: "Diseño",
   },
   {
+    // 👇 slug corregido para que coincida EXACTO con la key en articleContent
     slug: "cuanto-cuesta-cocina-modular-rd",
     title: "¿Cuánto cuesta una cocina modular en República Dominicana en 2026?",
     excerpt:
       "Precios reales de cocinas modernas en RD: desde muebles de cocina modernos económicos hasta cocinas de lujo con isla y granito. Presupuesto, materiales y factores que influyen.",
     img: "/images/moderKitchen3.jpg",
     date: "Marzo 2026",
+    isoDate: "2026-03-01",
     readTime: "8 min",
     category: "Guías",
   },

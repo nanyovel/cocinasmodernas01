@@ -5,28 +5,36 @@ import Footer from "@/components/Footer";
 import LeadForm from "@/components/LeadForm";
 import { posts } from "../page";
 
-type Props = { params: { slug: string } };
+type Props = { params: Promise<{ slug: string }> };
 
 export async function generateStaticParams() {
   return posts.map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  // const post = posts.find((p) => p.slug === params.slug);
-
-  const { slug } = await params; // 👈 también aquí
+  const { slug } = await params;
   const post = posts.find((p) => p.slug === slug);
   if (!post) return {};
+
+  const url = `https://cocinasmodernasrd.com/blog/${post.slug}`;
+  const absoluteImage = `https://cocinasmodernasrd.com${post.img}`;
+
   return {
     title: `${post.title} | Cocinas Modernas RD`,
     description: post.excerpt,
-    alternates: {
-      canonical: `https://cocinasmodernasrd.com/blog/${post.slug}`,
-    },
+    alternates: { canonical: url },
     openGraph: {
       title: post.title,
       description: post.excerpt,
-      images: [{ url: post.img }],
+      url,
+      type: "article",
+      images: [{ url: absoluteImage, width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+      images: [absoluteImage],
     },
   };
 }
@@ -182,7 +190,8 @@ En RD, donde la luz natural es abundante, las cocinas oscuras modernas funcionan
 Nuestro equipo puede mostrarte ambas opciones en un diseño 3D personalizado. Solicita tu consulta gratuita hoy.
   `,
 
-  "cuanto-cuesta-cocina-moderna-rd": `
+  // 👇 key corregida para coincidir EXACTO con el slug en posts (page.tsx)
+  "cuanto-cuesta-cocina-modular-rd": `
 Una de las preguntas más frecuentes que recibimos es: ¿cuánto cuesta una cocina moderna en República Dominicana? La respuesta depende del tamaño, los materiales y el nivel de detalle. Aquí los rangos reales del mercado en 2026.
 
 ## Cocinas modernas económicas en RD
@@ -234,14 +243,8 @@ Una cocina bien diseñada puede aumentar el valor de tu propiedad entre un 10% y
 `;
 
 export default async function BlogPost({ params }: Props) {
-  console.log(params);
-  // const post = posts.find((p) => p.slug === params.slug);
-  // const { slug } = await params;
-
   const { slug } = await params;
   const post = posts.find((p) => p.slug === slug);
-  console.log(posts);
-  console.log(post);
 
   if (!post)
     return (
@@ -250,10 +253,38 @@ export default async function BlogPost({ params }: Props) {
       </div>
     );
 
-  const content = articleContent[params.slug] || defaultContent;
-  const related = posts.filter((p) => p.slug !== params.slug).slice(0, 3);
+  const content = articleContent[slug] || defaultContent;
+  const related = posts.filter((p) => p.slug !== slug).slice(0, 3);
+
+  const url = `https://cocinasmodernasrd.com/blog/${post.slug}`;
+  const absoluteImage = `https://cocinasmodernasrd.com${post.img}`;
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt,
+    image: absoluteImage,
+    datePublished: post.isoDate,
+    dateModified: post.isoDate,
+    mainEntityOfPage: url,
+    author: {
+      "@type": "Organization",
+      name: "Cocinas Modernas RD",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Cocinas Modernas RD",
+    },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* Hero */}
       <section className="relative h-[55vh] min-h-[400px] flex items-end pb-16 overflow-hidden">
         <div className="absolute inset-0">
