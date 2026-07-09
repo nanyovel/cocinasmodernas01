@@ -27,7 +27,7 @@ export default function LeadForm({ compact = false }: { compact?: boolean }) {
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-    >
+    >,
   ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -60,7 +60,7 @@ export default function LeadForm({ compact = false }: { compact?: boolean }) {
       // ✅ SI FALLA → enviar a WhatsApp
       if (!res.ok || data.error) {
         const msg = encodeURIComponent(
-          `Nuevo lead:\nNombre: ${nombre}\nTeléfono: ${telefono}\nEmail: ${email}\nPresupuesto: ${presupuesto}\nMensaje: ${mensaje}`
+          `Nuevo lead:\nNombre: ${nombre}\nTeléfono: ${telefono}\nEmail: ${email}\nPresupuesto: ${presupuesto}\nMensaje: ${mensaje}`,
         );
 
         window.open(`https://wa.me/18493419890?text=${msg}`, "_blank");
@@ -82,7 +82,7 @@ export default function LeadForm({ compact = false }: { compact?: boolean }) {
       console.error("Error de red:", error);
 
       const msg = encodeURIComponent(
-        `Nuevo lead:\nNombre: ${nombre}\nTeléfono: ${telefono}\nEmail: ${email}\nPresupuesto: ${presupuesto}\nMensaje: ${mensaje}`
+        `Nuevo lead:\nNombre: ${nombre}\nTeléfono: ${telefono}\nEmail: ${email}\nPresupuesto: ${presupuesto}\nMensaje: ${mensaje}`,
       );
 
       window.open(`https://wa.me/18493419890?text=${msg}`, "_blank");
@@ -167,11 +167,19 @@ export default function LeadForm({ compact = false }: { compact?: boolean }) {
             type="email"
             className={inputClass}
           />
+          {/* <select
+            name="presupuesto"
+            value={form.presupuesto}
+            onChange={handleChange}
+            required
+            className={`${inputClass} cursor-pointer`}
+          > */}
           <select
             name="presupuesto"
             value={form.presupuesto}
             onChange={handleChange}
             required
+            aria-label="Presupuesto aproximado"
             className={`${inputClass} cursor-pointer`}
           >
             <option value="" disabled>
