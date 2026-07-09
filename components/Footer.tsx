@@ -8,7 +8,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="flex ">
             <img
-              src="/images/logo transparent.png"
+              src="/images/logo-transparent.png"
               alt="Cocinas Modernas RD"
               className="h-10 w-auto"
               width={100}
