@@ -31,7 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "weekly" as const,
       priority: path === "" ? 1 : 0.8,
-    })
+    }),
   );
 
   // 2. NUEVAS: Rutas de tipos de cocinas (Landing pages de servicios)
@@ -56,7 +56,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  // 4. No olvides las páginas legales para Adsense (con prioridad baja)
   const legalRoutes = [
     "/politica-privacidad",
     "/politica-cookies",

@@ -218,7 +218,7 @@ El tamaño de la cocina, el material de los gabinetes, la encimera elegida (gran
 
 ---
 
-¿Quieres saber el precio exacto de tu cocina moderna? Solicita una cotización gratuita sin compromiso y recibe un presupuesto detallado.
+¿Quieres saber el precio exacto de tu cocina moderna? Presiona el boton de WhatsApp y recibe un presupuesto detallado.
   `,
 };
 

@@ -24,7 +24,7 @@ export default function Footer() {
               <p className="font-body text-sm text-cream/50 leading-relaxed max-w-xs">
                 Diseñamos y fabricamos cocinas modernas con isla, gabinetes de
                 cocina modernos y muebles de cocina de lujo en República
-                Dominicana. Cada cocina moderna es única.
+                Dominicana. Cada cocina es única.
               </p>
               <div className="gold-line mt-8 w-24" />
             </div>
@@ -147,8 +147,8 @@ export default function Footer() {
             </a>{" "}
           </p> */}
           <p>
-            Cocinas modernas · Gabinetes modernos · Islas de cocina · Muebles de
-            cocina · Santo Domingo, Republica Dominicana
+            Diseño, fabricación e instalación en toda República Dominicana — con
+            garantía de 2 años.
           </p>
         </div>
       </div>

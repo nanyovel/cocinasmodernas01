@@ -2,14 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import LeadForm from "@/components/LeadForm";
 import Footer from "@/components/Footer";
-import { posts } from "@/app/blog/page";
+// import { posts } from "@/app/blog/page";
+import Script from "next/script";
 
 export interface CocinaPageData {
-  // SEO
-  slug: string;
-  title: string;
-  metaDescription: string;
-
   // Hero
   heroImage: string;
   heroImageAlt: string;
@@ -19,9 +15,9 @@ export interface CocinaPageData {
 
   // Intro section
   introTitle: string;
-  introBody: string[]; // paragraphs
+  introBody: string[];
 
-  // Features (why choose this type)
+  // Features
   features: { icon: string; title: string; desc: string }[];
 
   // Gallery
@@ -30,9 +26,6 @@ export interface CocinaPageData {
   // FAQ
   faqs: { q: string; a: string }[];
 
-  // Related blog slugs
-  relatedSlugs: string[];
-
   // WhatsApp message
   waMessage: string;
 }
@@ -40,10 +33,10 @@ export interface CocinaPageData {
 const WHATSAPP = "18493419890";
 
 export default function CocinaPage({ data }: { data: CocinaPageData }) {
-  const relatedPosts = posts.filter((p) => data.relatedSlugs.includes(p.slug));
+  // const relatedPosts = posts.filter((p) => data.relatedSlugs.includes(p.slug));
 
   const waLink = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
-    data.waMessage
+    data.waMessage,
   )}`;
 
   return (
@@ -174,17 +167,17 @@ export default function CocinaPage({ data }: { data: CocinaPageData }) {
           <div className="flex items-end justify-between mb-12">
             <div>
               <p className="font-body text-xs tracking-[0.4em] uppercase text-gold mb-4">
-                Proyectos realizados
+                Proyectos de referencia
               </p>
               <h2 className="font-display text-4xl font-light text-cream">
                 Galería de {data.badge.toLowerCase()}
               </h2>
             </div>
             <Link
-              href="/galeria"
+              href="/tipos-de-cocinas"
               className="btn-outline-gold hidden md:block text-[10px] px-5 py-3"
             >
-              Ver galería completa
+              Ver más tipos de cocina
             </Link>
           </div>
 
@@ -238,22 +231,6 @@ export default function CocinaPage({ data }: { data: CocinaPageData }) {
               </div>
             ))}
           </div>
-
-          {/* Schema JSON-LD FAQ */}
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "FAQPage",
-                mainEntity: data.faqs.map((faq) => ({
-                  "@type": "Question",
-                  name: faq.q,
-                  acceptedAnswer: { "@type": "Answer", text: faq.a },
-                })),
-              }),
-            }}
-          />
         </div>
       </section>
 
@@ -284,7 +261,7 @@ export default function CocinaPage({ data }: { data: CocinaPageData }) {
       </section>
 
       {/* ── RELATED BLOG ── */}
-      {relatedPosts.length > 0 && (
+      {/* {relatedPosts.length > 0 && (
         <section className="section-pad bg-obsidian-soft">
           <div className="max-w-7xl mx-auto">
             <p className="font-body text-xs tracking-[0.4em] uppercase text-gold mb-4">
@@ -324,7 +301,7 @@ export default function CocinaPage({ data }: { data: CocinaPageData }) {
             </div>
           </div>
         </section>
-      )}
+      )} */}
 
       {/* ── FINAL CTA ── */}
       <section className="py-24 px-6 text-center relative overflow-hidden">

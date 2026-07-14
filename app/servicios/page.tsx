@@ -19,6 +19,7 @@ export const metadata: Metadata = {
     description: PAGE_DESCRIPTION,
     url: PAGE_URL,
     type: "website",
+    locale: "es_DO",
     images: [{ url: PAGE_IMAGE, width: 1200, height: 630 }],
   },
   twitter: {
@@ -29,50 +30,45 @@ export const metadata: Metadata = {
   },
 };
 
-const categories = [
+// Servicios generales del negocio (no tipos de cocina — eso vive en /tipos-de-cocinas)
+const services = [
   {
-    icon: "🚪",
-    title: "Cocinas Modulares",
-    desc: "Fabricadas en taller con precisión milimétrica, instaladas en tu hogar en días, no semanas. Ideales para presupuestos y espacios de cualquier tamaño.",
-    img: "/images/moderKitchen3.jpg",
-    imgAlt:
-      "Cocina modular moderna en melamina con gabinetes a medida en Santo Domingo",
-    href: "/cocinas/modulares",
-  },
-  {
-    icon: "🍳",
-    title: "Cocinas con Isla Central",
-    desc: "El espacio de trabajo, desayuno y encuentro familiar. Diseñadas con desayunador, granito, cuarzo o mármol a tu medida.",
+    icon: "🎨",
+    title: "Diseño 3D Gratuito",
+    desc: "Visualiza tu cocina completa antes de fabricar. Ajustamos distribución, colores y materiales contigo hasta que el diseño sea exactamente el que quieres.",
     img: "/images/modernKitchen.jpeg",
-    imgAlt: "Cocina moderna con isla central de mármol en Santo Domingo",
-    href: "/cocinas/con-isla",
+    imgAlt: "Diseño 3D de cocina moderna previo a fabricación en Santo Domingo",
   },
   {
-    icon: "🪑",
-    title: "Gabinetes y Muebles a Medida",
-    desc: "Modelos minimalistas sin manijas, soluciones de almacenamiento inteligente y acabados en madera, melamina o PVC, para cocinas de cualquier tamaño.",
-    img: "/images/gabineteKitchen.jpeg",
-    imgAlt: "Gabinetes de cocina modernos en madera con repisas flotantes",
-    href: "/cocinas/madera",
-  },
-  {
-    // 👇 agregado — antes /servicios no enlazaba a esta página
-    icon: "📐",
-    title: "Cocinas Pequeñas",
-    desc: "Diseños optimizados para apartamentos y espacios reducidos, sin sacrificar almacenamiento ni estética. Islas, barras y peninsulas a medida del espacio.",
-    img: "/images/marmolKitchenMedium.jpg",
-    imgAlt: "Cocina moderna pequeña optimizada en apartamento en Santo Domingo",
-    href: "/cocinas/pequenas",
-  },
-  {
-    // 👇 agregado — antes /servicios no enlazaba a esta página
-    icon: "🍽️",
-    title: "Cocinas Americanas",
-    desc: "Cocinas abiertas hacia la sala o el comedor, integradas al resto del hogar. Ideales para apartamentos modernos y casas de concepto abierto.",
-    img: "/images/islandKitchen.jpeg",
+    icon: "🔨",
+    title: "Remodelación de Cocinas",
+    desc: "Renovamos tu cocina actual sin necesidad de empezar de cero: cambio de frentes, encimeras, herrajes o distribución completa. Evaluamos qué conservar y qué renovar según tu presupuesto.",
+    img: "/images/cocina-en-l-oscura.jpg",
     imgAlt:
-      "Cocina americana moderna integrada a la sala en República Dominicana",
-    href: "/cocinas/americanas",
+      "Remodelación de cocina moderna con nuevos gabinetes en Santo Domingo",
+  },
+  {
+    icon: "🏭",
+    title: "Fabricación en Taller Propio",
+    desc: "Producimos cada módulo con precisión milimétrica en nuestro taller, con control de calidad en cada etapa, antes de que la cocina llegue a tu hogar.",
+    img: "/images/gabineteKitchen.jpeg",
+    imgAlt:
+      "Fabricación de gabinetes de cocina modernos en taller en República Dominicana",
+  },
+  {
+    icon: "🔧",
+    title: "Instalación Profesional",
+    desc: "Nuestro equipo instala todo en tu hogar con orden y precisión, cumpliendo los tiempos acordados, sin dejar tu casa hecha un desastre en el proceso.",
+    img: "/images/islandKitchen.jpeg",
+    imgAlt: "Instalación de cocina moderna con isla central en Santo Domingo",
+  },
+  {
+    icon: "🛡️",
+    title: "Garantía y Soporte Postventa",
+    desc: "2 años de garantía completa en materiales y mano de obra. Cualquier ajuste posterior lo resolvemos sin costo adicional para ti.",
+    img: "/images/marmolKitchenMedium.jpg",
+    imgAlt:
+      "Cocina moderna terminada con garantía completa en República Dominicana",
   },
 ];
 
@@ -110,8 +106,7 @@ const process = [
 ];
 
 export default function ServiciosPage() {
-  const breadcrumbJsonLd = {
-    "@context": "https://schema.org",
+  const breadcrumbSchema = {
     "@type": "BreadcrumbList",
     itemListElement: [
       {
@@ -124,11 +119,10 @@ export default function ServiciosPage() {
     ],
   };
 
-  // Service schema — ayuda a que Google entienda la oferta como conjunto de servicios
-  const serviceJsonLd = {
-    "@context": "https://schema.org",
+  // Service schema — ahora refleja los servicios reales (no tipos de cocina)
+  const serviceSchema = {
     "@type": "Service",
-    serviceType: "Diseño y fabricación de cocinas modernas",
+    serviceType: "Diseño, fabricación e instalación de cocinas modernas",
     provider: {
       "@type": "LocalBusiness",
       name: "Cocinas Modernas RD",
@@ -137,29 +131,29 @@ export default function ServiciosPage() {
     areaServed: "República Dominicana",
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "Categorías de cocinas",
-      itemListElement: categories.map((c) => ({
+      name: "Servicios ofrecidos",
+      itemListElement: services.map((s) => ({
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: c.title,
-          url: `https://cocinasmodernasrd.com${c.href}`,
+          name: s.title,
+          description: s.desc,
         },
       })),
     },
   };
 
+  const combinedSchema = {
+    "@context": "https://schema.org",
+    "@graph": [breadcrumbSchema, serviceSchema],
+  };
+
   return (
     <>
       <Script
-        id="breadcrumb-schema-servicios"
+        id="page-schema-servicios"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
-      />
-      <Script
-        id="service-schema-servicios"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(combinedSchema) }}
       />
 
       {/* Header */}
@@ -177,10 +171,10 @@ export default function ServiciosPage() {
         </p>
       </section>
 
-      {/* Categories — teasers cortos, cada uno enlaza a su página de autoridad */}
+      {/* Servicios */}
       <section className="section-pad">
         <div className="max-w-7xl mx-auto space-y-24">
-          {categories.map((s, i) => (
+          {services.map((s, i) => (
             <div key={i} className="grid md:grid-cols-2 gap-16 items-center">
               <div className={i % 2 === 1 ? "md:order-2" : ""}>
                 <div className="relative aspect-[4/3] overflow-hidden">
@@ -206,8 +200,8 @@ export default function ServiciosPage() {
                   {s.desc}
                 </p>
                 <div className="flex flex-wrap gap-4">
-                  <Link href={s.href} className="btn-outline-gold">
-                    Ver Detalles
+                  <Link href="/tipos-de-cocinas" className="btn-outline-gold">
+                    Ver Tipos de Cocina
                   </Link>
                   <Link href="/contacto" className="btn-gold">
                     Solicitar Cotización
@@ -251,7 +245,7 @@ export default function ServiciosPage() {
         </div>
       </section>
 
-      {/* Cross-link al blog de precios — visitantes de /servicios buscan justo esto */}
+      {/* Cross-link al blog de precios */}
       <section className="pb-24 px-6">
         <div className="max-w-3xl mx-auto text-center border-t border-gold/10 pt-16">
           <p className="font-body text-sm text-cream/50 mb-4">

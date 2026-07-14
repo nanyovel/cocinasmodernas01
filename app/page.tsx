@@ -91,9 +91,13 @@ export default function HomePage() {
               Cocinas Modernas · Santo Domingo · República Dominicana
             </p>
             <h1 className="font-display text-5xl md:text-7xl font-light leading-[1.05] text-cream mb-6">
-              Tu cocina moderna,{" "}
+              Cocinas Modernas en Santo Domingo:{" "}
+              <span className="text-shimmer italic">
+                Diseño y Fabricación a Medida{" "}
+              </span>
+              {/* Tu cocina moderna,{" "}
               <span className="text-shimmer italic">obra maestra</span> de
-              diseño
+              diseño */}
             </h1>
             <p className="font-body text-base text-cream/60 leading-relaxed max-w-lg mb-10">
               Diseñamos y fabricamos{" "}
@@ -107,8 +111,8 @@ export default function HomePage() {
               <Link href="/contacto" className="btn-gold">
                 Cotización Gratuita
               </Link>
-              <Link href="/galeria" className="btn-outline-gold">
-                Ver Galería
+              <Link href="/tipos-de-cocinas" className="btn-outline-gold">
+                Ver tipo de cocinas
               </Link>
             </div>
 
@@ -177,7 +181,10 @@ export default function HomePage() {
                 Inspiración para tu cocina ideal
               </h2>
             </div>
-            <Link href="/galeria" className="btn-outline-gold hidden md:block">
+            <Link
+              href="/tipos-de-cocinas"
+              className="btn-outline-gold hidden md:block"
+            >
               Ver Todo
             </Link>
           </div>

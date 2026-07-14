@@ -8,6 +8,15 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/galeria",
+        destination: "/tipos-de-cocina",
+        permanent: true,
+      },
+    ];
+  },
 
   async headers() {
     return [

@@ -1,24 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-
-const cocinasSubmenu = [
-  // entre 100 y 1000 busquedas
-  { href: "/cocinas/modulares", label: "Cocinas Modulares" },
-  { href: "/cocinas/con-isla", label: "Cocinas con Isla" },
-  { href: "/cocinas/pequenas", label: "Cocinas modernas pequeñas" },
-
-  // entre 10 y 100 busquedas
-  { href: "/cocinas/madera", label: "Cocinas en Madera" },
-  { href: "/cocinas/americanas", label: "Cocinas Americanas" },
-  // { href: "/cocinas/vintage", label: "Cocinas Vintage" },
-  // { href: "/cocinas/elegantes", label: "Cocinas Elegantes" },
-  // { href: "/cocinas/italianas", label: "Cocinas Italianas" },
-  // {
-  //   href: "/cocinas/barra-desayunador",
-  //   label: "Cocinas con Barra Desayunador",
-  // },
-];
+import { COCINAS, SeccionesLink } from "@/lib/data";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -56,8 +39,9 @@ export default function Navbar() {
   };
 
   const restLinks = [
+    // { href: "/materiales", label: "Materiales" },
     { href: "/servicios", label: "Servicios" },
-    { href: "/galeria", label: "Galería" },
+
     { href: "/blog", label: "Blog" },
     { href: "/contacto", label: "Contacto" },
   ];
@@ -132,9 +116,9 @@ export default function Navbar() {
               </svg>
             </button>
 
-            {/* Panel */}
+            {/* Panel — ahora en dos columnas para 10 opciones */}
             <div
-              className={`absolute top-full left-1/2 -translate-x-1/2 mt-5 w-68 min-w-[260px] transition-all duration-300 origin-top ${
+              className={`absolute top-full left-1/2 -translate-x-1/2 mt-5 w-[560px] transition-all duration-300 origin-top ${
                 dropdownOpen
                   ? "opacity-100 scale-y-100 translate-y-0 pointer-events-auto"
                   : "opacity-0 scale-y-95 -translate-y-2 pointer-events-none"
@@ -146,32 +130,49 @@ export default function Navbar() {
               {/* Box */}
               <div className="relative bg-obsidian-mid border border-gold/20 shadow-[0_20px_60px_rgba(0,0,0,0.6)]">
                 {/* Top label */}
-                <div className="px-5 pt-4 pb-3 border-b border-gold/10">
+                <div className="px-6 pt-4 pb-3 border-b border-gold/10">
                   <p className="font-body text-[10px] tracking-[0.4em] uppercase text-gold/50">
                     Tipos de cocinas
                   </p>
                 </div>
 
-                {/* Items */}
-                <ul className="py-2">
-                  {cocinasSubmenu.map((item) => (
-                    <li key={item.href}>
-                      <Link
-                        href={item.href}
-                        onClick={() => setDropdownOpen(false)}
-                        className="group flex items-center gap-3 px-5 py-2.5 font-body text-[11px] tracking-wide text-cream/55 hover:text-gold hover:bg-white/[0.03] transition-all duration-200"
-                      >
-                        <span className="w-3 h-px bg-gold/25 group-hover:bg-gold group-hover:w-5 transition-all duration-300 flex-shrink-0" />
-                        {item.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
+                {/* Items — dos columnas de 5, con separador central */}
+                <div className="relative grid grid-cols-2 py-2">
+                  <div className="absolute left-1/2 top-2 bottom-2 w-px bg-gold/10" />
+                  <ul className="grid grid-flow-row auto-rows-max">
+                    {COCINAS.slice(0, 6).map((item) => (
+                      <li key={item.slug}>
+                        <Link
+                          href={`${SeccionesLink.cocinas}/${item.slug}`}
+                          onClick={() => setDropdownOpen(false)}
+                          className="group flex items-center gap-3 px-6 py-2.5 font-body text-[11px] tracking-wide text-cream/55 hover:text-gold hover:bg-white/[0.03] transition-all duration-200"
+                        >
+                          <span className="w-3 h-px bg-gold/25 group-hover:bg-gold group-hover:w-5 transition-all duration-300 flex-shrink-0" />
+                          {item.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                  <ul className="grid grid-flow-row auto-rows-max">
+                    {COCINAS.slice(6, 12).map((item) => (
+                      <li key={item.slug}>
+                        <Link
+                          href={`${SeccionesLink.cocinas}/${item.slug}`}
+                          onClick={() => setDropdownOpen(false)}
+                          className="group flex items-center gap-3 px-6 py-2.5 font-body text-[11px] tracking-wide text-cream/55 hover:text-gold hover:bg-white/[0.03] transition-all duration-200"
+                        >
+                          <span className="w-3 h-px bg-gold/25 group-hover:bg-gold group-hover:w-5 transition-all duration-300 flex-shrink-0" />
+                          {item.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
                 {/* Bottom CTA */}
-                <div className="px-5 py-3 border-t border-gold/10 bg-obsidian-light/40">
+                <div className="px-6 py-3 border-t border-gold/10 bg-obsidian-light/40">
                   <Link
-                    href="/galeria"
+                    href="/tipos-de-cocinas"
                     onClick={() => setDropdownOpen(false)}
                     className="font-body text-[10px] tracking-[0.3em] uppercase text-gold/70 hover:text-gold transition-colors flex items-center gap-2 group"
                   >
@@ -228,7 +229,7 @@ export default function Navbar() {
       {/* ── Mobile menu ── */}
       <div
         className={`md:hidden transition-all duration-500 overflow-hidden ${
-          menuOpen ? "max-h-[640px] opacity-100" : "max-h-0 opacity-0"
+          menuOpen ? "max-h-[760px] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <nav className="bg-obsidian-soft border-t border-gold/10 px-6 py-5 flex flex-col">
@@ -264,28 +265,43 @@ export default function Navbar() {
               </svg>
             </button>
 
+            {/* En mobile: 2 columnas compactas para las 10 opciones + CTA */}
             <div
               className={`overflow-hidden transition-all duration-300 ${
                 mobileCocinasOpen
-                  ? "max-h-80 opacity-100 pb-3"
+                  ? "max-h-[420px] opacity-100 pb-3"
                   : "max-h-0 opacity-0"
               }`}
             >
-              <div className="border-l-2 border-gold/20 ml-1 pl-4 flex flex-col gap-0.5">
-                {cocinasSubmenu.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => {
-                      setMenuOpen(false);
-                      setMobileCocinasOpen(false);
-                    }}
-                    className="font-body text-[11px] text-cream/45 hover:text-gold transition-colors py-2 flex items-center gap-2.5"
-                  >
-                    <span className="w-2 h-px bg-gold/30 flex-shrink-0" />
-                    {item.label}
-                  </Link>
-                ))}
+              <div className="border-l-2 border-gold/20 ml-1 pl-4">
+                <div className="grid grid-cols-2 gap-x-3">
+                  {COCINAS.map((item) => (
+                    <Link
+                      key={item.slug}
+                      href={item.slug}
+                      onClick={() => {
+                        setMenuOpen(false);
+                        setMobileCocinasOpen(false);
+                      }}
+                      className="font-body text-[11px] leading-tight text-cream/45 hover:text-gold transition-colors py-2 flex items-start gap-2"
+                    >
+                      <span className="w-2 h-px bg-gold/30 flex-shrink-0 mt-1.5" />
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+
+                <Link
+                  href="/tipos-de-cocinas"
+                  onClick={() => {
+                    setMenuOpen(false);
+                    setMobileCocinasOpen(false);
+                  }}
+                  className="mt-1 font-body text-[10px] tracking-[0.3em] uppercase text-gold/70 hover:text-gold transition-colors flex items-center gap-2 pt-3 border-t border-gold/10"
+                >
+                  Ver galería completa
+                  <span>→</span>
+                </Link>
               </div>
             </div>
           </div>

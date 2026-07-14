@@ -178,13 +178,6 @@ export default function RootLayout({
                 name: "Islas de cocina modernas",
               },
             },
-            {
-              "@type": "Offer",
-              itemOffered: {
-                "@type": "Service",
-                name: "Closets y vestidores a medida",
-              },
-            },
           ],
         },
         sameAs: [
@@ -197,7 +190,7 @@ export default function RootLayout({
         "@id": "https://cocinasmodernasrd.com/#website",
         url: "https://cocinasmodernasrd.com",
         name: "Cocinas Modernas RD",
-        inLanguage: "es",
+        inLanguage: "es-DO",
       },
     ],
   };
