@@ -12,7 +12,6 @@ export interface CocinaPageData {
   badge: string;
   h1: string;
   heroDesc: string;
-
   // Intro section
   introTitle: string;
   introBody: string[];
