@@ -1,28 +1,30 @@
 import { MetadataRoute } from "next";
 import { posts } from "./blog/page";
+import { COCINAS, SeccionesLink } from "@/lib/data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://cocinasmodernasrd.com"; // ← quitado el www
+  const base = "https://cocinasmodernasrd.com";
 
   // 1. Rutas principales
-  const staticRoutes = ["", "/servicios", "/galeria", "/blog", "/contacto"].map(
-    (path) => ({
-      url: `${base}${path}`,
-      lastModified: new Date(),
-      changeFrequency: "weekly" as const,
-      priority: path === "" ? 1 : 0.8,
-    })
-  );
+  const staticRoutes = [
+    "",
+    "/servicios",
+    "/tipos-de-cocinas",
+    "/blog",
+    "/contacto",
+    "/preguntas-frecuentes",
+  ].map((path) => ({
+    url: `${base}${path}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+    priority: path === "" ? 1 : 0.8,
+  }));
 
   // 2. Rutas de tipos de cocinas
-  const cocinaTypes = [
-    "/americanas",
-    "/con-isla",
-    "/madera",
-    "/modulares",
-    "/pequenas",
-  ].map((tipo) => ({
-    url: `${base}/cocinas${tipo}`,
+  const cocinasTypeSingle = COCINAS.map((cocina) => `/${cocina.slug}`);
+
+  const cocinaTypes = cocinasTypeSingle.map((tipo) => ({
+    url: `${base}${SeccionesLink.cocinas}${tipo}`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,
     priority: 0.9,
