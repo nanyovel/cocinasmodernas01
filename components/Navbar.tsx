@@ -278,7 +278,7 @@ export default function Navbar() {
                   {COCINAS.map((item) => (
                     <Link
                       key={item.slug}
-                      href={item.slug}
+                      href={`${SeccionesLink.cocinas}/${item.slug}`}
                       onClick={() => {
                         setMenuOpen(false);
                         setMobileCocinasOpen(false);

@@ -39,7 +39,7 @@ export default function Footer() {
               {[
                 { href: "/", label: "Inicio" },
                 { href: "/servicios", label: "Servicios" },
-                { href: "/galeria", label: "Galería" },
+                { href: "/tipos-de-cocinas", label: "Tipos de cocinas" },
                 { href: "/blog", label: "Blog" },
                 { href: "/contacto", label: "Contacto" },
               ].map((l) => (
