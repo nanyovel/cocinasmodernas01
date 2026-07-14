@@ -12,7 +12,7 @@ const nextConfig = {
     return [
       {
         source: "/galeria",
-        destination: "/tipos-de-cocina",
+        destination: "/tipos-de-cocinas",
         permanent: true,
       },
     ];
