@@ -80,8 +80,11 @@ export default function RootLayout({
         image: "https://cocinasmodernasrd.com/images/opengraph-image.jpg",
         address: {
           "@type": "PostalAddress",
+          streetAddress:
+            "Av. Sarasota esq. Av. Enrique Jiménez Moya, Plaza Universitaria, Segundo Nivel",
           addressLocality: "Santo Domingo",
           addressCountry: "DO",
+          postalCode: "10108", // confirma el código postal real de esa zona
         },
         geo: {
           "@type": "GeoCoordinates",
